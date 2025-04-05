@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetics - Chemistry Exam Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Chemistry Exam Study Guide</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="study_schedule.html">Study Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#">Inorganic Chemistry</a>
+                        <div class="dropdown-content">
+                            <a href="thermodynamics.html">Thermodynamics</a>
+                            <a href="kinetics.html">Kinetics</a>
+                            <a href="electrochemistry.html">Electrochemistry</a>
+                        </div>
+                    </li>
+                    <li><a href="organic_chemistry.html">Organic Chemistry</a></li>
+                    <li class="dropdown">
+                        <a href="#">Biochemistry</a>
+                        <div class="dropdown-content">
+                            <a href="carbohydrates.html">Carbohydrates</a>
+                            <a href="nad_fad.html">NAD and FAD</a>
+                        </div>
+                    </li>
+                    <li><a href="final_tips.html">Final Tips</a></li>
+                    <li><a href="interactive_tools.html">Interactive Tools</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Inorganic Chemistry: Kinetics</h1>
+            <p class="mb-4">Chemical kinetics is the study of reaction rates and mechanisms. It's one of the professor's frequently tested topics and requires understanding both theoretical concepts and practical applications.</p>
+
+            <div class="search-container mb-4">
+                <input type="text" id="search-input" class="search-input" placeholder="Search within kinetics...">
+                <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" style="display: none;"></div>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Reaction Rates</h2>
+                    <div class="card-content">
+                        <h3>Definition and Measurement</h3>
+                        <ul>
+                            <li><strong>Reaction rate</strong>: Change in concentration of reactants or products per unit time</li>
+                            <li><strong>Average rate</strong>: Δ[A]/Δt (negative for reactants, positive for products)</li>
+                            <li><strong>Instantaneous rate</strong>: d[A]/dt (the limit as Δt approaches zero)</li>
+                            <li><strong>Units</strong>: Usually mol/(L·s) or M/s</li>
+                        </ul>
+
+                        <h3 class="mt-3">Rate Law</h3>
+                        <ul>
+                            <li><strong>General form</strong>: Rate = k[A]^m[B]^n...</li>
+                            <li><strong>Rate constant (k)</strong>: Proportionality constant specific to each reaction</li>
+                            <li><strong>Reaction order</strong>:
+                                <ul>
+                                    <li>m = order with respect to A</li>
+                                    <li>n = order with respect to B</li>
+                                    <li>m + n + ... = overall reaction order</li>
+                                </ul>
+                            </li>
+                            <li><strong>Determination</strong>: By experimental data (method of initial rates)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Reaction Order</h2>
+                    <div class="card-content">
+                        <h3>Zero-Order Reactions</h3>
+                        <ul>
+                            <li><strong>Rate law</strong>: Rate = k</li>
+                            <li><strong>Integrated rate law</strong>: [A]t = [A]0 - kt</li>
+                            <li><strong>Half-life</strong>: t1/2 = [A]0/(2k)</li>
+                            <li><strong>Characteristics</strong>: Rate is independent of concentration</li>
+                            <li><strong>Examples</strong>: Surface-catalyzed reactions, photochemical reactions</li>
+                        </ul>
+
+                        <h3 class="mt-3">First-Order Reactions</h3>
+                        <ul>
+                            <li><strong>Rate law</strong>: Rate = k[A]</li>
+                            <li><strong>Integrated rate law</strong>: ln[A]t = ln[A]0 - kt</li>
+                            <li><strong>Half-life</strong>: t1/2 = ln(2)/k (independent of initial concentration)</li>
+                            <li><strong>Characteristics</strong>: Rate is directly proportional to concentration</li>
+                            <li><strong>Examples</strong>: Radioactive decay, many decomposition reactions</li>
+                        </ul>
+
+                        <h3 class="mt-3">Second-Order Reactions</h3>
+                        <ul>
+                            <li><strong>Rate law</strong>: Rate = k[A]^2 or Rate = k[A][B]</li>
+                            <li><strong>Integrated rate law (for [A]^2)</strong>: 1/[A]t = 1/[A]0 + kt</li>
+                            <li><strong>Half-life</strong>: t1/2 = 1/(k[A]0) (depends on initial concentration)</li>
+                            <li><strong>Characteristics</strong>: Rate is proportional to the square of concentration or product of two concentrations</li>
+                            <li><strong>Examples</strong>: Many bimolecular reactions</li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "ZERO-ONE-TWO"</h4>
+                            <ul>
+                                <li><strong>Z</strong>ero Order: straight line plot of [A] vs. time, t₁/₂ ∝ [A]₀</li>
+                                <li><strong>O</strong>ne Order: straight line plot of ln[A] vs. time, t₁/₂ = constant</li>
+                                <li><strong>T</strong>wo Order: straight line plot of 1/[A] vs. time, t₁/₂ ∝ 1/[A]₀</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Factors Affecting Reaction Rates</h2>
+                    <div class="card-content">
+                        <h3>Concentration</h3>
+                        <ul>
+                            <li><strong>Higher concentration</strong>: More frequent molecular collisions, faster reaction</li>
+                            <li><strong>Quantitative relationship</strong>: Determined by the reaction order</li>
+                        </ul>
+
+                        <h3 class="mt-3">Temperature</h3>
+                        <ul>
+                            <li><strong>Effect</strong>: Higher temperature generally increases reaction rate</li>
+                            <li><strong>Arrhenius equation</strong>: k = Ae^(-Ea/RT)
+                                <ul>
+                                    <li>k = rate constant</li>
+                                    <li>A = frequency factor (pre-exponential factor)</li>
+                                    <li>Ea = activation energy</li>
+                                    <li>R = gas constant</li>
+                                    <li>T = absolute temperature</li>
+                                </ul>
+                            </li>
+                            <li><strong>Logarithmic form</strong>: ln(k) = ln(A) - Ea/RT</li>
+                            <li><strong>Graphical determination</strong>: Plot ln(k) vs. 1/T gives a straight line with slope = -Ea/R</li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Memory Aid: "KATE"</h4>
+                            <ul>
+                                <li><strong>K</strong> = <strong>A</strong> × <strong>T</strong>emperature factor × <strong>E</strong>nergy factor</li>
+                                <li><strong>K</strong> (rate constant) increases when:</li>
+                                <li><strong>A</strong> (frequency factor) increases</li>
+                                <li><strong>T</strong>emperature increases</li>
+                                <li><strong>E</strong>a (activation energy) decreases</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="mt-3">Catalysts</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Substances that increase reaction rate without being consumed</li>
+                            <li><strong>Function</strong>: Lower the activation energy by providing an alternative reaction pathway</li>
+                            <li><strong>Types</strong>:
+                                <ul>
+                                    <li>Homogeneous catalysts: Same phase as reactants</li>
+                                    <li>Heterogeneous catalysts: Different phase from reactants</li>
+                                    <li>Enzymes: Biological catalysts with high specificity</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Reaction Mechanisms</h2>
+                    <div class="card-content">
+                        <h3>Elementary Steps</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Reaction steps that occur exactly as written in the molecular equation</li>
+                            <li><strong>Types</strong>:
+                                <ul>
+                                    <li>Unimolecular: Involve one molecule (A → products)</li>
+                                    <li>Bimolecular: Involve two molecules (A + B → products)</li>
+                                    <li>Termolecular: Involve three molecules (rare due to improbability of simultaneous collision)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3 class="mt-3">Molecularity vs. Order</h3>
+                        <ul>
+                            <li><strong>Molecularity</strong>: Number of molecules that must collide in an elementary step</li>
+                            <li><strong>Order</strong>: Experimentally determined exponents in the rate law</li>
+                            <li><strong>Relationship</strong>: For elementary steps, molecularity equals order</li>
+                        </ul>
+
+                        <h3 class="mt-3">Rate-Determining Step</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Slowest step in a multi-step mechanism</li>
+                            <li><strong>Significance</strong>: Controls the overall reaction rate</li>
+                            <li><strong>Steady-state approximation</strong>: Assumes intermediates are consumed as quickly as they are formed</li>
+                        </ul>
+
+                        <div class="highlight mt-3">
+                            <h4>Tip: Connecting Rate Laws to Mechanisms</h4>
+                            <ul>
+                                <li>The rate-determining step determines the overall rate law</li>
+                                <li>If A must collide with B in the slow step, the rate depends on [A][B]</li>
+                                <li>If A must first dissociate (slow step) before reacting with B, the rate depends only on [A]</li>
+                                <li>Think of it like a highway with a bottleneck—the narrowest point determines overall traffic flow</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Collision Theory</h2>
+                    <div class="card-content">
+                        <h3>Basic Principles</h3>
+                        <ul>
+                            <li><strong>Requirements for reaction</strong>:
+                                <ul>
+                                    <li>Molecules must collide</li>
+                                    <li>Collision must have sufficient energy (≥ activation energy)</li>
+                                    <li>Molecules must have proper orientation</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3 class="mt-3">Effective Collisions</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Collisions that lead to product formation</li>
+                            <li><strong>Factors affecting</strong>:
+                                <ul>
+                                    <li>Collision frequency (depends on concentration and temperature)</li>
+                                    <li>Fraction of collisions with sufficient energy (e^(-Ea/RT))</li>
+                                    <li>Steric factor (proper orientation)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3 class="mt-3">Activation Energy</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Minimum energy required for a reaction to occur</li>
+                            <li><strong>Energy profile</strong>: Graphical representation of energy changes during reaction</li>
+                            <li><strong>Transition state</strong>: Highest energy configuration along reaction pathway</li>
+                            <li><strong>Activated complex</strong>: Unstable intermediate at the transition state</li>
+                        </ul>
+
+                        <div class="highlight mt-3">
+                            <h4>Tip: Understanding Activation Energy</h4>
+                            <p>Think of activation energy as a hill that molecules must climb:</p>
+                            <ul>
+                                <li>Higher hill = fewer molecules have enough energy to react</li>
+                                <li>Catalysts create a tunnel through the hill rather than lowering it</li>
+                                <li>Temperature increases the "running speed" of all molecules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <s<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>

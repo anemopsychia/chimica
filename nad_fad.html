@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAD and FAD - Chemistry Exam Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+    <script src="https://3Dmol.org/build/3Dmol.ui-min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Chemistry Exam Study Guide</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="study_schedule.html">Study Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#">Inorganic Chemistry</a>
+                        <div class="dropdown-content">
+                            <a href="thermodynamics.html">Thermodynamics</a>
+                            <a href="kinetics.html">Kinetics</a>
+                            <a href="electrochemistry.html">Electrochemistry</a>
+                        </div>
+                    </li>
+                    <li><a href="organic_chemistry.html">Organic Chemistry</a></li>
+                    <li class="dropdown">
+                        <a href="#">Biochemistry</a>
+                        <div class="dropdown-content">
+                            <a href="carbohydrates.html">Carbohydrates</a>
+                            <a href="nad_fad.html">NAD and FAD</a>
+                        </div>
+                    </li>
+                    <li><a href="final_tips.html">Final Tips</a></li>
+                    <li><a href="interactive_tools.html">Interactive Tools</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Biochemistry Propedeutics: NAD and FAD</h1>
+            <p class="mb-4">NAD (Nicotinamide Adenine Dinucleotide) and FAD (Flavin Adenine Dinucleotide) are essential coenzymes involved in redox reactions in metabolism. Your professor frequently asks about these structures, so understanding them in detail is critical for your exam success.</p>
+
+            <div class="search-container mb-4">
+                <input type="text" id="search-input" class="search-input" placeholder="Search within NAD and FAD...">
+                <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" style="display: none;"></div>
+
+            <div class="highlight mb-4">
+                <p><strong>Important:</strong> This is one of the most frequently tested topics in your oral exam! Make sure you can draw the complete structures of NAD+ and FAD, explain their redox properties, and describe their roles in metabolism.</p>
+            </div>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">3D Molecular Viewers</h2>
+                    <div class="card-content">
+                        <p>Interact with these 3D models to better understand the structures of NAD and FAD. Click and drag to rotate, scroll to zoom, and right-click to pan.</p>
+                        
+                        <h3 class="mt-3">NAD+ Structure</h3>
+                        <div class="molecule-viewer" data-molecule="nad"></div>
+                        
+                        <h3 class="mt-3">FAD Structure</h3>
+                        <div class="molecule-viewer" data-molecule="fad"></div>
+                        
+                        <p class="mt-2"><small>Note: These are simplified representations. For exam purposes, you should be able to draw the complete chemical structures.</small></p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">NAD Structure and Properties</h2>
+                    <div class="card-content">
+                        <h3>Chemical Structure</h3>
+                        <ul>
+                            <li><strong>Components</strong>:
+                                <ul>
+                                    <li>Nicotinamide (derived from vitamin B3/niacin)</li>
+                                    <li>Adenine (purine base)</li>
+                                    <li>Two ribose sugars</li>
+                                    <li>Two phosphate groups</li>
+                                </ul>
+                            </li>
+                            <li><strong>Linkage</strong>: Pyrophosphate bridge connects the two nucleotides</li>
+                            <li><strong>Nomenclature</strong>: NAD⁺ (oxidized form), NADH (reduced form)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Detailed Structure</h3>
+                        <ul>
+                            <li><strong>Nicotinamide nucleotide</strong>:
+                                <ul>
+                                    <li>Nicotinamide connected to ribose at N-1</li>
+                                    <li>Ribose connected to phosphate at C-5'</li>
+                                </ul>
+                            </li>
+                            <li><strong>Adenine nucleotide</strong>:
+                                <ul>
+                                    <li>Adenine connected to ribose at N-9</li>
+                                    <li>Ribose connected to phosphate at C-5'</li>
+                                </ul>
+                            </li>
+                            <li><strong>Connection</strong>: The two phosphate groups form a pyrophosphate bridge</li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "NAPPY"</h4>
+                            <ul>
+                                <li><strong>N</strong>icotinamide (from vitamin B3)</li>
+                                <li><strong>A</strong>denine (purine base)</li>
+                                <li><strong>P</strong>hosphate groups (two)</li>
+                                <li><strong>P</strong>entose sugars (two ribose units)</li>
+                                <li><strong>Y</strong>oked together by pyrophosphate bridge</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">NAD Redox Properties</h2>
+                    <div class="card-content">
+                        <h3>Redox Center</h3>
+                        <p>The nicotinamide ring is the redox-active part of NAD.</p>
+                        
+                        <h3 class="mt-3">Oxidized form (NAD⁺)</h3>
+                        <ul>
+                            <li>Positive charge on nitrogen</li>
+                            <li>Accepts two electrons and one proton</li>
+                        </ul>
+                        
+                        <h3 class="mt-3">Reduced form (NADH)</h3>
+                        <ul>
+                            <li>Neutral nicotinamide</li>
+                            <li>Contains two additional electrons and one proton</li>
+                        </ul>
+                        
+                        <div class="equation">
+                            NAD⁺ + 2e⁻ + H⁺ → NADH
+                        </div>
+                        
+                        <p><strong>Standard reduction potential</strong>: -0.32 V</p>
+                        
+                        <h3 class="mt-3">Spectroscopic Properties</h3>
+                        <ul>
+                            <li><strong>Absorption</strong>:
+                                <ul>
+                                    <li>NAD⁺: Absorbs at 260 nm</li>
+                                    <li>NADH: Absorbs at 260 nm and 340 nm</li>
+                                </ul>
+                            </li>
+                            <li><strong>Fluorescence</strong>:
+                                <ul>
+                                    <li>NAD⁺: Non-fluorescent</li>
+                                    <li>NADH: Fluorescent (emission at 460 nm)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <div class="example mt-3">
+                            <p>The spectroscopic differences between NAD⁺ and NADH allow scientists to monitor redox reactions in real-time. For example, in enzyme assays, the appearance of absorbance at 340 nm indicates the formation of NADH, which can be used to calculate reaction rates.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">NADP Structure and Properties</h2>
+                    <div class="card-content">
+                        <h3>Structural Difference from NAD</h3>
+                        <ul>
+                            <li><strong>Additional phosphate</strong>: Attached to 2'-hydroxyl of adenosine ribose</li>
+                            <li><strong>Nomenclature</strong>: NADP⁺ (oxidized form), NADPH (reduced form)</li>
+                        </ul>
+                        
+                        <h3 class="mt-3">Functional Difference</h3>
+                        <ul>
+                            <li><strong>NAD⁺/NADH</strong>: Primarily involved in catabolic (energy-yielding) reactions</li>
+                            <li><strong>NADP⁺/NADPH</strong>: Primarily involved in anabolic (biosynthetic) reactions</li>
+                        </ul>
+                        
+                        <div class="example mt-3">
+                            <p>NADPH is used in fatty acid and steroid synthesis. The additional phosphate group allows enzymes to distinguish between NAD and NADP, directing them to different metabolic pathways.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">FAD Structure and Properties</h2>
+                    <div class="card-content">
+                        <h3>Chemical Structure</h3>
+                        <ul>
+                            <li><strong>Components</strong>:
+                                <ul>
+                                    <li>Flavin (isoalloxazine ring system derived from riboflavin/vitamin B2)</li>
+                                    <li>Ribitol (sugar alcohol)</li>
+                                    <li>Adenine (purine base)</li>
+                                    <li>Ribose sugar</li>
+                                    <li>Two phosphate groups</li>
+                                </ul>
+                            </li>
+                            <li><strong>Linkage</strong>: Phosphate groups connect ribitol to ribose</li>
+                            <li><strong>Nomenclature</strong>: FAD (oxidized form), FADH₂ (reduced form)</li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "FAIR"</h4>
+                            <ul>
+                                <li><strong>F</strong>lavin (isoalloxazine ring)</li>
+                                <li><strong>A</strong>denine (purine base)</li>
+                                <li><strong>I</strong>nterconnected by phosphates</li>
+                                <li><strong>R</strong>ibitol links flavin to phosphate</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">FAD Redox Properties</h2>
+                    <div class="card-content">
+                        <h3>Redox Center</h3>
+                        <p>The isoalloxazine ring system is the redox-active part of FAD.</p>
+                        
+                        <h3 class="mt-3">Oxidized form (FAD)</h3>
+                        <ul>
+                            <li>Fully conjugated ring system</li>
+                            <li>Yellow color</li>
+                        </ul>
+                        
+                        <h3 class="mt-3">Reduced form (FADH₂)</h3>
+                        <ul>
+                            <li>Two additional electrons and two protons</li>
+                            <li>Colorless</li>
+                        </ul>
+                        
+                        <div class="equation">
+                            FAD + 2e⁻ + 2H⁺ → FADH₂
+                        </div>
+                        
+                        <p><strong>Standard reduction potential</strong>: -0.22 V</p>
+                        
+                        <h3 class="mt-3">Spectroscopic Properties</h3>
+                        <ul>
+                            <li><strong>Absorption</strong>:
+                                <ul>
+                                    <li>FAD: Absorbs at 450 nm (yellow)</li>
+                                    <li>FADH₂: Minimal absorption in visible range (colorless)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Fluorescence</strong>:
+                                <ul>
+                                    <li>FAD: Weakly fluorescent</li>
+                                    <li>FADH₂: Non-fluorescent</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <div class="example mt-3">
+                            <p>The color change from yellow (FAD) to colorless (FADH₂) allows visual monitoring of redox reactions. This is particularly useful in enzyme assays where FAD-dependent enzymes are being studied.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Comparison of NAD and FAD</h2>
+                    <div class="card-content">
+                        <h3>Structural Differences</h3>
+                        <ul>
+                            <li><strong>Redox-active group</strong>:
+                                <ul>
+                                    <li>NAD: Nicotinamide (pyridine derivative)</li>
+                                    <li>FAD: Isoalloxazine (flavin)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Electron transfer</strong>:
+                                <ul>
+                                    <li>NAD: Transfers two electrons simultaneously (hydride ion)</li>
+                                    <li>FAD: Can transfer electrons one at a time (radical intermediate possible)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h3 class=<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>

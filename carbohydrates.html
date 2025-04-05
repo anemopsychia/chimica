@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbohydrates - Chemistry Exam Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Chemistry Exam Study Guide</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="study_schedule.html">Study Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#">Inorganic Chemistry</a>
+                        <div class="dropdown-content">
+                            <a href="thermodynamics.html">Thermodynamics</a>
+                            <a href="kinetics.html">Kinetics</a>
+                            <a href="electrochemistry.html">Electrochemistry</a>
+                        </div>
+                    </li>
+                    <li><a href="organic_chemistry.html">Organic Chemistry</a></li>
+                    <li class="dropdown">
+                        <a href="#">Biochemistry</a>
+                        <div class="dropdown-content">
+                            <a href="carbohydrates.html">Carbohydrates</a>
+                            <a href="nad_fad.html">NAD and FAD</a>
+                        </div>
+                    </li>
+                    <li><a href="final_tips.html">Final Tips</a></li>
+                    <li><a href="interactive_tools.html">Interactive Tools</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Biochemistry Propedeutics: Carbohydrates</h1>
+            <p class="mb-4">Carbohydrates are one of the most frequently tested topics in your oral exam. This section covers their structure, classification, and properties with a focus on the concepts emphasized by your professor.</p>
+
+            <div class="search-container mb-4">
+                <input type="text" id="search-input" class="search-input" placeholder="Search within carbohydrates...">
+                <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" style="display: none;"></div>
+
+            <div class="highlight mb-4">
+                <p><strong>Important:</strong> Carbohydrates are frequently tested in your oral exam! Pay special attention to monosaccharide structures, stereochemistry, and the differences between common disaccharides.</p>
+            </div>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Monosaccharides</h2>
+                    <div class="card-content">
+                        <h3>Classification</h3>
+                        <h4>By carbon number</h4>
+                        <ul>
+                            <li>Trioses (3C): Glyceraldehyde, dihydroxyacetone</li>
+                            <li>Tetroses (4C): Erythrose, threose</li>
+                            <li>Pentoses (5C): Ribose, xylose, arabinose</li>
+                            <li>Hexoses (6C): Glucose, galactose, mannose, fructose</li>
+                        </ul>
+
+                        <h4 class="mt-3">By functional group</h4>
+                        <ul>
+                            <li>Aldoses: Contain aldehyde group (e.g., glucose)</li>
+                            <li>Ketoses: Contain ketone group (e.g., fructose)</li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "GALP"</h4>
+                            <ul>
+                                <li><strong>G</strong>lucose: 6-carbon aldose, most common</li>
+                                <li><strong>A</strong>ldoses have aldehyde group</li>
+                                <li><strong>L</strong>ength determines classification (tri-, tetr-, pent-, hex-)</li>
+                                <li><strong>P</strong>entoses and hexoses form rings</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="mt-3">Stereochemistry</h3>
+                        <ul>
+                            <li><strong>Chiral centers</strong>: Most carbons in monosaccharides are chiral</li>
+                            <li><strong>D/L system</strong>: Based on configuration of the highest-numbered chiral carbon
+                                <ul>
+                                    <li>D: Hydroxyl group on right in Fischer projection</li>
+                                    <li>L: Hydroxyl group on left in Fischer projection</li>
+                                </ul>
+                            </li>
+                            <li><strong>Most naturally occurring sugars</strong>: D-configuration</li>
+                        </ul>
+
+                        <h3 class="mt-3">Epimers</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Stereoisomers that differ at only one chiral center</li>
+                            <li><strong>Examples</strong>:
+                                <ul>
+                                    <li>Glucose and mannose (differ at C-2)</li>
+                                    <li>Glucose and galactose (differ at C-4)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "GAME"</h4>
+                            <ul>
+                                <li><strong>G</strong>lucose and <strong>M</strong>annose are epimers at C-2</li>
+                                <li><strong>G</strong>lucose and <strong>A</strong>llose are epimers at C-3</li>
+                                <li><strong>G</strong>lucose and <strong>G</strong>alactose are epimers at C-4</li>
+                                <li><strong>E</strong>pimers differ at only one stereocenter</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Cyclization and Ring Structures</h2>
+                    <div class="card-content">
+                        <h3>Cyclization</h3>
+                        <ul>
+                            <li><strong>Mechanism</strong>: Intramolecular reaction between carbonyl and hydroxyl groups</li>
+                            <li><strong>Ring sizes</strong>:
+                                <ul>
+                                    <li>Pyranose: Six-membered ring (like pyran)</li>
+                                    <li>Furanose: Five-membered ring (like furan)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Anomeric carbon</strong>: The former carbonyl carbon</li>
+                            <li><strong>Anomers</strong>:
+                                <ul>
+                                    <li>α-anomer: Hydroxyl group at anomeric carbon is trans to CH₂OH</li>
+                                    <li>β-anomer: Hydroxyl group at anomeric carbon is cis to CH₂OH</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="highlight mt-3">
+                            <h4>Tip: Understanding Anomeric Carbon</h4>
+                            <ul>
+                                <li>The anomeric carbon is the former carbonyl carbon (C-1 in aldoses, C-2 in ketoses)</li>
+                                <li>It's the only carbon that can exist in two different configurations (α and β)</li>
+                                <li>In Haworth projections:
+                                    <ul>
+                                        <li>α: hydroxyl group points down (opposite the CH₂OH)</li>
+                                        <li>β: hydroxyl group points up (same side as CH₂OH)</li>
+                                    </ul>
+                                </li>
+                                <li>β-forms are generally more stable due to equatorial positioning of groups</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="mt-3">Haworth Projections</h3>
+                        <ul>
+                            <li><strong>Representation</strong>: Three-dimensional ring structure in two dimensions</li>
+                            <li><strong>Conventions</strong>:
+                                <ul>
+                                    <li>Ring is viewed from the side</li>
+                                    <li>Heavier line represents the side closer to viewer</li>
+                                    <li>Groups above the plane point up, groups below point down</li>
+                                    <li>In D-sugars, the CH₂OH group points up</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Memory Aid: "RIGHT DOWN"</h4>
+                            <ul>
+                                <li><strong>RIGHT</strong>: Anomeric carbon is on the right</li>
+                                <li><strong>DOWN</strong>: In α-anomers, OH points down from the anomeric carbon</li>
+                                <li>In β-anomers, OH points up from the anomeric carbon</li>
+                            </ul>
+                        </div>
+
+                        <div class="highlight mt-3">
+                            <h4>Tip: Visualizing Carbohydrate Structures</h4>
+                            <p>Use your hand to model pyranose rings:</p>
+                            <ul>
+                                <li>Make a fist with thumb extended</li>
+                                <li>The thumb represents the CH₂OH group</li>
+                                <li>In D-sugars, the thumb points up in Haworth projections</li>
+                                <li>In L-sugars, the thumb points down</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="mt-3">Mutarotation</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Spontaneous change in optical rotation due to interconversion between anomers</li>
+                            <li><strong>Mechanism</strong>:
+                                <ul>
+                                    <li>Ring opening to form open-chain structure</li>
+                                    <li>Ring closure to form either α or β anomer</li>
+                                </ul>
+                            </li>
+                            <li><strong>Equilibrium mixture</strong>: Contains both anomers and small amount of open-chain form</li>
+                            <li><strong>Example</strong>: α-D-glucose ([α]D = +112.2°) → equilibrium mixture ([α]D = +52.7°)</li>
+                        </ul>
+
+                        <div class="example mt-3">
+                            <h4>Example: Glucose Mutarotation</h4>
+                            <p>When crystalline α-D-glucose (specific rotation [α]D = +112.2°) is dissolved in water:</p>
+                            <ul>
+                                <li>The optical rotation gradually changes to +52.7°</li>
+                                <li>This represents an equilibrium mixture of 36% α-form and 64% β-form</li>
+                                <li>The process involves ring opening to the open-chain form followed by ring closure</li>
+                                <li>This explains why freshly prepared glucose solutions show changing optical rotation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Derivatives of Monosaccharides</h2>
+                    <div class="card-content">
+                        <h3>Sugar Alcohols</h3>
+                        <ul>
+                            <li><strong>Formation</strong>: Reduction of aldehyde or ketone group</li>
+                            <li><strong>Examples</strong>:
+                                <ul>
+                                    <li>Sorbitol (from glucose)</li>
+                                    <li>Mannitol (from mannose)</li>
+                                    <li>Xylitol (from xylose)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Properties</strong>: Sweet taste, not metabolized by many bacteria (used in sugar-free products)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Sugar Acids</h3>
+                        <ul>
+                            <li><strong>Oxidation of aldehyde group</strong>: Aldonic acids (e.g., gluconic acid)</li>
+                            <li><strong>Oxidation of primary alcohol</strong>: Uronic acids (e.g., glucuronic acid)</li>
+                            <li><strong>Oxidation of both ends</strong>: Aldaric acids (e.g., glucaric acid)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Amino Sugars</h3>
+                        <ul>
+                            <li><strong>Structure</strong>: Hydroxyl group replaced by amino group</li>
+                            <li><strong>Examples</strong>:
+                                <ul>
+                                    <li>Glucosamine (component of chitin)</li>
+                                    <li>Galactosamine (component of chondroitin sulfate)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Derivatives</strong>: N-acetylated amino sugars (e.g., N-acetylglucosamine)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Deoxy Sugars</h3>
+                        <ul>
+                            <li><strong>Structure</strong>: Hydroxyl group replaced by hydrogen</li>
+                            <li><strong>Example</strong>: 2-deoxyribose (component of DNA)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Disaccharides</h2>
+                    <div class="card-content">
+                        <h3>Formation</h3>
+                        <ul>
+                            <li><strong>Glycosidic bond</strong>: Formed between anomeric carbon of one sugar and hydroxyl group of another</li>
+                            <li><strong>Classification</strong>:
+                                <ul>
+                                    <li>α(1→4): e.g., maltose</li>
+                                    <li>β(1→4): e.g., cellobiose</li>
+                                    <li>α(1→2): e.g., sucrose</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                       <response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>

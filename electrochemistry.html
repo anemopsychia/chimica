@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrochemistry - Chemistry Exam Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Chemistry Exam Study Guide</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="study_schedule.html">Study Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#">Inorganic Chemistry</a>
+                        <div class="dropdown-content">
+                            <a href="thermodynamics.html">Thermodynamics</a>
+                            <a href="kinetics.html">Kinetics</a>
+                            <a href="electrochemistry.html">Electrochemistry</a>
+                        </div>
+                    </li>
+                    <li><a href="organic_chemistry.html">Organic Chemistry</a></li>
+                    <li class="dropdown">
+                        <a href="#">Biochemistry</a>
+                        <div class="dropdown-content">
+                            <a href="carbohydrates.html">Carbohydrates</a>
+                            <a href="nad_fad.html">NAD and FAD</a>
+                        </div>
+                    </li>
+                    <li><a href="final_tips.html">Final Tips</a></li>
+                    <li><a href="interactive_tools.html">Interactive Tools</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Inorganic Chemistry: Electrochemistry</h1>
+            <p class="mb-4">Electrochemistry is the study of the relationship between electricity and chemical reactions. It's one of the most frequently tested topics in your oral exam and requires understanding both theoretical concepts and practical applications.</p>
+
+            <div class="search-container mb-4">
+                <input type="text" id="search-input" class="search-input" placeholder="Search within electrochemistry...">
+                <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" style="display: none;"></div>
+
+            <div class="highlight mb-4">
+                <p><strong>Important:</strong> This is one of the most frequently tested topics in your oral exam! Make sure you understand the principles of electrochemical cells, can calculate cell potentials, and can draw cell diagrams correctly.</p>
+            </div>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Electrolytic Conduction</h2>
+                    <div class="card-content">
+                        <h3>Electrolytes</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Substances that dissociate into ions in solution or molten state</li>
+                            <li><strong>Strong electrolytes</strong>: Completely dissociate (e.g., NaCl, HCl, NaOH)</li>
+                            <li><strong>Weak electrolytes</strong>: Partially dissociate (e.g., CH₃COOH, NH₃)</li>
+                            <li><strong>Non-electrolytes</strong>: Do not dissociate (e.g., glucose, alcohol)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Conductivity</h3>
+                        <ul>
+                            <li><strong>Ionic conductivity</strong>: Movement of ions in solution</li>
+                            <li><strong>Factors affecting conductivity</strong>:
+                                <ul>
+                                    <li>Concentration of ions</li>
+                                    <li>Mobility of ions</li>
+                                    <li>Temperature</li>
+                                    <li>Nature of solvent</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Electrolysis</h2>
+                    <div class="card-content">
+                        <h3>Principles</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Process where electrical energy drives a non-spontaneous chemical reaction</li>
+                            <li><strong>Components</strong>:
+                                <ul>
+                                    <li>Electrolytic cell</li>
+                                    <li>External power source</li>
+                                    <li>Electrodes (anode and cathode)</li>
+                                    <li>Electrolyte</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3 class="mt-3">Electrolysis of Molten Salts</h3>
+                        <div class="example">
+                            <p><strong>Example: Electrolysis of molten NaCl</strong></p>
+                            <ul>
+                                <li>Cathode (reduction): Na⁺ + e⁻ → Na</li>
+                                <li>Anode (oxidation): 2Cl⁻ → Cl₂ + 2e⁻</li>
+                                <li>Overall: 2NaCl → 2Na + Cl₂</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="mt-3">Electrolysis of Aqueous Solutions</h3>
+                        <ul>
+                            <li><strong>Competing reactions</strong>: Water can be reduced or oxidized</li>
+                            <li><strong>Cathode reactions</strong>:
+                                <ul>
+                                    <li>Metal ion reduction: M^n+ + ne⁻ → M</li>
+                                    <li>Water reduction: 2H₂O + 2e⁻ → H₂ + 2OH⁻</li>
+                                </ul>
+                            </li>
+                            <li><strong>Anode reactions</strong>:
+                                <ul>
+                                    <li>Anion oxidation: 2X⁻ → X₂ + 2e⁻</li>
+                                    <li>Water oxidation: 2H₂O → O₂ + 4H⁺ + 4e⁻</li>
+                                </ul>
+                            </li>
+                            <li><strong>Preferential discharge</strong>: Depends on standard reduction potentials and concentrations</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Quantitative Aspects of Electrolysis</h2>
+                    <div class="card-content">
+                        <h3>Faraday's Laws</h3>
+                        <ul>
+                            <li><strong>First law</strong>: The mass of a substance produced at an electrode is directly proportional to the quantity of electricity passed</li>
+                            <li><strong>Second law</strong>: For the same quantity of electricity, the masses of different substances produced are proportional to their equivalent weights</li>
+                            <li><strong>Faraday constant (F)</strong>: 96,485 C/mol (charge carried by one mole of electrons)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Calculations</h3>
+                        <div class="equation">
+                            m = (M × I × t) / (n × F)
+                        </div>
+                        <ul>
+                            <li>m = mass deposited (g)</li>
+                            <li>M = molar mass (g/mol)</li>
+                            <li>I = current (A)</li>
+                            <li>t = time (s)</li>
+                            <li>n = number of electrons transferred</li>
+                            <li>F = Faraday constant (96,485 C/mol)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Electrochemical Cells</h2>
+                    <div class="card-content">
+                        <h3>Galvanic (Voltaic) Cells</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Cells that convert chemical energy to electrical energy through spontaneous redox reactions</li>
+                            <li><strong>Components</strong>:
+                                <ul>
+                                    <li>Anode (oxidation occurs)</li>
+                                    <li>Cathode (reduction occurs)</li>
+                                    <li>Salt bridge or porous barrier</li>
+                                    <li>External circuit</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "RED CAT, AN OX"</h4>
+                            <ul>
+                                <li><strong>RED</strong>uction at the <strong>CAT</strong>hode</li>
+                                <li><strong>AN</strong>ode is where <strong>OX</strong>idation occurs</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="mt-3">Cell Notation</h3>
+                        <ul>
+                            <li><strong>Convention</strong>: Anode | anode solution || cathode solution | cathode</li>
+                            <li><strong>Example</strong>: Zn | Zn²⁺ || Cu²⁺ | Cu</li>
+                        </ul>
+
+                        <h3 class="mt-3">Cell Potential</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Measure of the driving force for the cell reaction</li>
+                            <li><strong>Standard cell potential</strong>: E°cell = E°cathode - E°anode</li>
+                            <li><strong>Relationship to Gibbs free energy</strong>: ΔG° = -nFE°cell</li>
+                            <li><strong>Spontaneity</strong>: E°cell > 0 indicates a spontaneous reaction</li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "SPECS"</h4>
+                            <ul>
+                                <li><strong>S</strong>alt bridge connects half-cells</li>
+                                <li><strong>P</strong>ositive electrode is the cathode</li>
+                                <li><strong>E</strong>lectrons flow from anode to cathode</li>
+                                <li><strong>C</strong>ations move toward cathode</li>
+                                <li><strong>S</strong>pontaneous reactions have positive cell potentials</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Electrode Potential</h2>
+                    <div class="card-content">
+                        <h3>Standard Hydrogen Electrode (SHE)</h3>
+                        <ul>
+                            <li><strong>Components</strong>:
+                                <ul>
+                                    <li>Platinum electrode</li>
+                                    <li>1M H₃O⁺ solution</li>
+                                    <li>H₂ gas at 1 atm pressure</li>
+                                </ul>
+                            </li>
+                            <li><strong>Convention</strong>: Assigned a potential of 0.00 V</li>
+                            <li><strong>Half-reaction</strong>: 2H⁺ + 2e⁻ ⇌ H₂</li>
+                        </ul>
+
+                        <h3 class="mt-3">Standard Reduction Potentials</h3>
+                        <ul>
+                            <li><strong>Definition</strong>: Potential of a half-cell compared to the SHE under standard conditions</li>
+                            <li><strong>Standard conditions</strong>:
+                                <ul>
+                                    <li>25°C (298.15 K)</li>
+                                    <li>1M concentration for solutions</li>
+                                    <li>1 atm pressure for gases</li>
+                                    <li>Pure solids and liquids</li>
+                                </ul>
+                            </li>
+                            <li><strong>Table of values</strong>: Higher values indicate greater tendency to be reduced</li>
+                        </ul>
+
+                        <h3 class="mt-3">Relationship Between Reduction and Oxidation Potentials</h3>
+                        <ul>
+                            <li><strong>Oxidation potential</strong>: Negative of the reduction potential</li>
+                            <li><strong>Example</strong>: If E°(Zn²⁺/Zn) = -0.76 V, then E°(Zn/Zn²⁺) = +0.76 V</li>
+                        </ul>
+
+                        <div class="highlight mt-3">
+                            <h4>Tip: Understanding Standard Reduction Potentials</h4>
+                            <ul>
+                                <li>Think of reduction potentials as a measure of how badly an element "wants" electrons</li>
+                                <li>Elements with more positive potentials (like F₂, +2.87 V) strongly attract electrons</li>
+                                <li>Elements with more negative potentials (like Li, -3.05 V) easily give up electrons</li>
+                                <li>In any reaction, the species with higher reduction potential will be reduced</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Redox Potential</h2>
+                    <div class="card-content">
+                        <h3>Determining Reaction Direction</h3>
+                        <ul>
+                            <li><strong>Rule</strong>: Species with higher reduction potential will be reduced; species with lower reduction potential will be oxidized</li>
+                            <li><strong>Example</strong>: Cu²⁺ + Zn → Cu + Zn²⁺
+                                <ul>
+                                    <li>E°(Cu²⁺/Cu) = +0.34 V</li>
+                                    <li>E°(Zn²⁺/Zn) = -0.76 V</li>
+                                    <li>Cu²⁺ has higher reduction potential, so it will be reduced</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3 class="mt-3">Measuring Redox Potentials</h3>
+                        <ul>
+                            <li><strong>Potentiometer</strong>: Measures potential difference without drawing current</li>
+                            <li><strong>Reference electrodes</strong>: SHE, saturated calomel electrode (SCE), silver/silver chloride electrode</li<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>
