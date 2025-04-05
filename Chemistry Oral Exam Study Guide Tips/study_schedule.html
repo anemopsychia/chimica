@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Schedule - Chemistry Exam Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Chemistry Exam Study Guide</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="study_schedule.html">Study Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#">Inorganic Chemistry</a>
+                        <div class="dropdown-content">
+                            <a href="thermodynamics.html">Thermodynamics</a>
+                            <a href="kinetics.html">Kinetics</a>
+                            <a href="electrochemistry.html">Electrochemistry</a>
+                        </div>
+                    </li>
+                    <li><a href="organic_chemistry.html">Organic Chemistry</a></li>
+                    <li class="dropdown">
+                        <a href="#">Biochemistry</a>
+                        <div class="dropdown-content">
+                            <a href="carbohydrates.html">Carbohydrates</a>
+                            <a href="nad_fad.html">NAD and FAD</a>
+                        </div>
+                    </li>
+                    <li><a href="final_tips.html">Final Tips</a></li>
+                    <li><a href="interactive_tools.html">Interactive Tools</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>20-Day Study Schedule</h1>
+            <p class="mb-4">This schedule is designed to help you systematically cover all the required material for your chemistry oral exam over a 20-day period. It allocates extra time to the frequently asked topics and ensures balanced coverage of inorganic chemistry, organic chemistry, and biochemistry propedeutics.</p>
+
+            <div class="progress-container mb-4">
+                <div class="progress-bar" id="schedule-progress" style="width: 0%"></div>
+            </div>
+
+            <section class="week-section">
+                <h2>Week 1: Inorganic Chemistry Foundations</h2>
+                
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 1-2: Introduction and Atomic Structure</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Day 1:</strong> Scientific method, matter classification, atomic theory</li>
+                            <li><strong>Day 2:</strong> Atomic structure, periodic table, electron configuration</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> Understand the fundamental concepts that form the basis for more complex topics. Pay special attention to electron configurations and periodic trends.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Create a periodic table map highlighting electron configurations and trends. Practice drawing orbital diagrams for different elements. Review the historical development of atomic theory to understand how concepts evolved.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 3-4: Chemical Bonding</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Day 3:</strong> Ionic and covalent bonding, Lewis structures</li>
+                            <li><strong>Day 4:</strong> Molecular geometry, hybridization, molecular orbital theory</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> Master drawing Lewis structures and predicting molecular geometry. Understand the relationship between hybridization and molecular shape.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Practice drawing Lewis structures for at least 20 different molecules. Create 3D models of molecules with different geometries. Create a chart comparing different types of bonds and their properties.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="week-section mt-4">
+                <h2>Week 2: Thermodynamics, Kinetics, and Solutions</h2>
+                
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 5-7: Thermodynamics</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Day 5:</strong> First law, enthalpy, Hess's law</li>
+                            <li><strong>Day 6:</strong> Entropy, spontaneity, Gibbs free energy</li>
+                            <li><strong>Day 7:</strong> Thermodynamic equilibrium, practice problems</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> This is a frequently tested topic! Understand the relationships between ΔH, ΔS, and ΔG. Practice calculating thermodynamic quantities and predicting reaction spontaneity.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Create a thermodynamic cycle diagram for visualizing Hess's law. Practice predicting spontaneity using the "PETS" rule. Work through multiple calculation problems involving ΔG = ΔH - TΔS.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 8-9: Kinetics</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Day 8:</strong> Reaction rates, rate laws, reaction order</li>
+                            <li><strong>Day 9:</strong> Arrhenius equation, reaction mechanisms, catalysis</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> Another frequently tested topic! Master determining reaction orders and writing rate laws. Understand how to use the Arrhenius equation to relate temperature and rate constants.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Create a chart comparing zero, first, and second-order reactions. Practice drawing energy diagrams for reactions with and without catalysts. Work through problems involving the determination of activation energy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 10: Solutions and Equilibrium</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Solution composition and properties</li>
+                            <li>Colligative properties</li>
+                            <li>Chemical equilibrium and Le Chatelier's principle</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> Understand how to calculate solution concentrations and apply Le Chatelier's principle to predict equilibrium shifts.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Practice concentration calculations using different units (molarity, molality, etc.). Create a flowchart for predicting equilibrium shifts using Le Chatelier's principle. Review the relationship between Kc and Kp.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="week-section mt-4">
+                <h2>Week 3: Electrochemistry and Organic Chemistry</h2>
+                
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 11-12: Electrochemistry</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Day 11:</strong> Electrolytic conduction, electrolysis, galvanic cells</li>
+                            <li><strong>Day 12:</strong> Electrode potentials, Nernst equation, applications</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> This is one of the most frequently tested topics! Master drawing cell diagrams, calculating cell potentials, and applying the Nernst equation.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Practice drawing galvanic and electrolytic cells. Create a table of standard reduction potentials for common half-reactions. Work through problems involving the Nernst equation at non-standard conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 13-15: Organic Chemistry</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Day 13:</strong> Alkanes, isomerism, stereochemistry</li>
+                            <li><strong>Day 14:</strong> Functional groups: alkenes, alkynes, alcohols</li>
+                            <li><strong>Day 15:</strong> Carbonyl compounds, carboxylic acids, aromatic compounds</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> Master drawing structures and reaction mechanisms. Pay special attention to stereochemistry and the reactivity of different functional groups.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Practice drawing and naming compounds with different functional groups. Create reaction maps showing transformations between functional groups. Draw mechanisms for key reactions like nucleophilic substitution and electrophilic addition.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="week-section mt-4">
+                <h2>Week 4: Biochemistry Propedeutics and Final Review</h2>
+                
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 16-17: Carbohydrates</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Day 16:</strong> Monosaccharides: structure, properties, derivatives</li>
+                            <li><strong>Day 17:</strong> Disaccharides, polysaccharides, biological importance</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> This is a frequently tested topic! Master drawing the structures of common monosaccharides in different forms (linear, cyclic). Understand the formation of glycosidic bonds.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Practice drawing glucose in both linear and cyclic forms. Create a chart comparing different monosaccharides. Draw the structures of common disaccharides showing the glycosidic linkages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 18: NAD and FAD</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li>Structure and properties of NAD and FAD</li>
+                            <li>Redox characteristics and biochemical significance</li>
+                            <li>Comparison of NAD and FAD</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> This is one of the most frequently tested topics! Master drawing the structures of NAD and FAD. Understand their roles in redox reactions and metabolic pathways.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Practice drawing the complete structures of NAD+ and FAD. Create a comparison chart highlighting the structural and functional differences. Draw the redox reactions involving these coenzymes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <h3 class="card-title">Day 19-20: Comprehensive Review and Practice</h3>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Day 19:</strong> Review of frequently tested topics, practice explaining concepts aloud</li>
+                            <li><strong>Day 20:</strong> Final review, practice drawing key structures and reactions</li>
+                        </ul>
+                        <div class="highlight mt-2">
+                            <p><strong>Focus:</strong> Consolidate your understanding of all topics, with special emphasis on the frequently tested areas. Practice explaining concepts as you would in an oral exam.</p>
+                        </div>
+                        <button class="collapsible mt-2">Study Tips</button>
+                        <div class="collapsible-content">
+                            <p>Create a one-page summary for each major topic. Practice explaining concepts to a friend or recording yourself. Review all mnemonics and memory aids. Ensure you can draw all important structures and reactions without reference materials.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="daily-routine mt-4 mb-4">
+                <div class="card">
+                    <h2 class="card-title">Recommended Daily Study Routine</h2>
+                    <div class="card-content<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>

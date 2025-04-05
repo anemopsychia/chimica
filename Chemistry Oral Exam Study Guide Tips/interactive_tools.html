@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tools - Chemistry Exam Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+    <script src="https://3Dmol.org/build/3Dmol.ui-min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Chemistry Exam Study Guide</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="study_schedule.html">Study Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#">Inorganic Chemistry</a>
+                        <div class="dropdown-content">
+                            <a href="thermodynamics.html">Thermodynamics</a>
+                            <a href="kinetics.html">Kinetics</a>
+                            <a href="electrochemistry.html">Electrochemistry</a>
+                        </div>
+                    </li>
+                    <li><a href="organic_chemistry.html">Organic Chemistry</a></li>
+                    <li class="dropdown">
+                        <a href="#">Biochemistry</a>
+                        <div class="dropdown-content">
+                            <a href="carbohydrates.html">Carbohydrates</a>
+                            <a href="nad_fad.html">NAD and FAD</a>
+                        </div>
+                    </li>
+                    <li><a href="final_tips.html">Final Tips</a></li>
+                    <li><a href="interactive_tools.html">Interactive Tools</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Interactive Study Tools</h1>
+            <p class="mb-4">These interactive tools are designed to enhance your learning experience and help you prepare more effectively for your chemistry oral exam. Use them alongside the content pages to reinforce your understanding and test your knowledge.</p>
+
+            <div class="search-container mb-4">
+                <input type="text" id="search-input" class="search-input" placeholder="Search all study materials...">
+                <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" style="display: none;"></div>
+
+            <section id="progress-tracker">
+                <div class="card mb-4">
+                    <h2 class="card-title">Your Study Progress</h2>
+                    <div class="card-content">
+                        <p>Track your progress through the study guide. The progress bar updates automatically as you visit content pages and complete quizzes.</p>
+                        
+                        <h3 class="mt-3">Overall Progress</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="overall-progress" style="width: 0%"></div>
+                        </div>
+                        
+                        <h3 class="mt-3">Topics Visited</h3>
+                        <ul id="visited-topics">
+                            <li>Loading your progress...</li>
+                        </ul>
+                        
+                        <h3 class="mt-3">Quizzes Completed</h3>
+                        <div id="quiz-progress">
+                            <p>Loading quiz progress...</p>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <button id="reset-progress" class="btn btn-accent">Reset Progress</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="flashcards">
+                <div class="card mb-4">
+                    <h2 class="card-title">Flashcards</h2>
+                    <div class="card-content">
+                        <p>Click on a flashcard to flip it and reveal the answer. Use these to test your recall of key concepts.</p>
+                        
+                        <div class="mt-3 mb-3">
+                            <select id="flashcard-topic" class="search-input" style="width: 100%; max-width: 300px;">
+                                <option value="thermodynamics">Thermodynamics</option>
+                                <option value="kinetics">Kinetics</option>
+                                <option value="electrochemistry">Electrochemistry</option>
+                                <option value="organic">Organic Chemistry</option>
+                                <option value="carbohydrates">Carbohydrates</option>
+                                <option value="nad-fad">NAD and FAD</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Thermodynamics Flashcards -->
+                        <div id="thermodynamics-flashcards">
+                            <div class="flashcard">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <p>What is the First Law of Thermodynamics?</p>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <p>The First Law of Thermodynamics states that energy cannot be created or destroyed, only transferred or converted from one form to another. Mathematically: ΔU = q + w</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flashcard">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <p>What is Gibbs Free Energy and how does it relate to spontaneity?</p>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <p>Gibbs Free Energy (G) is defined as G = H - TS. A process is spontaneous when ΔG < 0, at equilibrium when ΔG = 0, and non-spontaneous when ΔG > 0.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flashcard">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <p>What is Hess's Law?</p>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <p>Hess's Law states that the enthalpy change of a reaction is independent of the pathway between the initial and final states. It allows us to calculate enthalpy changes for reactions that cannot be measured directly.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- NAD and FAD Flashcards -->
+                        <div id="nad-fad-flashcards" style="display: none;">
+                            <div class="flashcard">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <p>What are the components of NAD+?</p>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <p>NAD+ consists of: 1) Nicotinamide (from vitamin B3), 2) Adenine, 3) Two ribose sugars, 4) Two phosphate groups connected by a pyrophosphate bridge.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flashcard">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <p>What is the difference between NAD+ and NADP+?</p>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <p>NADP+ has an additional phosphate group attached to the 2'-hydroxyl of the adenosine ribose. Functionally, NAD+/NADH is primarily involved in catabolic reactions, while NADP+/NADPH is primarily involved in anabolic reactions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flashcard">
+                                <div class="flashcard-inner">
+                                    <div class="flashcard-front">
+                                        <p>What are the components of FAD?</p>
+                                    </div>
+                                    <div class="flashcard-back">
+                                        <p>FAD consists of: 1) Flavin (isoalloxazine ring from vitamin B2), 2) Ribitol (sugar alcohol), 3) Adenine, 4) Ribose sugar, 5) Two phosphate groups.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <button id="prev-flashcard" class="btn">Previous</button>
+                            <button id="next-flashcard" class="btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="molecular-viewers">
+                <div class="card mb-4">
+                    <h2 class="card-title">3D Molecular Viewers</h2>
+                    <div class="card-content">
+                        <p>Interact with these 3D models to better understand molecular structures. Click and drag to rotate, scroll to zoom, and right-click to pan.</p>
+                        
+                        <div class="mt-3 mb-3">
+                            <select id="molecule-selector" class="search-input" style="width: 100%; max-width: 300px;">
+                                <option value="nad">NAD+</option>
+                                <option value="fad">FAD</option>
+                                <option value="glucose">Glucose</option>
+                                <option value="benzene">Benzene</option>
+                            </select>
+                        </div>
+                        
+                        <div class="molecule-viewer" data-molecule="nad"></div>
+                        
+                        <div class="mt-3">
+                            <p><strong>Viewing Tips:</strong></p>
+                            <ul>
+                                <li>Click and drag to rotate the molecule</li>
+                                <li>Scroll to zoom in and out</li>
+                                <li>Right-click and drag to pan</li>
+                                <li>Double-click an atom to center the view on it</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quizzes">
+                <div class="card mb-4">
+                    <h2 class="card-title">Self-Assessment Quizzes</h2>
+                    <div class="card-content">
+                        <p>Test your knowledge with these comprehensive quizzes. Each topic has multiple questions to help you identify areas that need more review.</p>
+                        
+                        <div class="mt-3 mb-3">
+                            <select id="quiz-topic" class="search-input" style="width: 100%; max-width: 300px;">
+                                <option value="comprehensive">Comprehensive Quiz</option>
+                                <option value="thermodynamics">Thermodynamics</option>
+                                <option value="kinetics">Kinetics</option>
+                                <option value="electrochemistry">Electrochemistry</option>
+                                <option value="organic">Organic Chemistry</option>
+                                <option value="carbohydrates">Carbohydrates</option>
+                                <option value="nad-fad">NAD and FAD</option>
+                            </select>
+                            <button id="start-quiz" class="btn btn-primary mt-2">Start Quiz</button>
+                        </div>
+                        
+                        <div id="quiz-container" style="display: none;">
+                            <h3 id="quiz-title">Comprehensive Quiz</h3>
+                            
+                            <div class="quiz-progress-container">
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="quiz-progress-bar" style="width: 0%"></div>
+                                </div>
+                                <p id="quiz-progress-text">Question 1 of 10</p>
+                            </div>
+                            
+                            <div class="quiz-container mt-3">
+                                <div class="quiz-question" id="current-question">Loading question...</div>
+                                <ul class="quiz-options" id="current-options">
+                                    <li class="quiz-option">Loading options...</li>
+                                </ul>
+                                <div class="quiz-feedback" style="display: none;"></div>
+                                <button class="btn quiz-submit mt-2">Submit Answer</button>
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <button id="next-question" class="btn" disabled>Next Question</button>
+                            </div>
+                            
+                            <div id="quiz-results" style="display: none;">
+                                <h3>Quiz Results</h3>
+                                <p id="quiz-score">You scored: 0/10</p>
+                                <div id="quiz-feedback"></div>
+                                <button id="restart-quiz" class="btn btn-primary mt-3">Restart Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="drawing-tools">
+                <div class="card mb-4">
+                    <h2 class="card-title">Practice Drawing Tools</h2>
+                    <div class="card-content">
+                        <p>Your professor will ask you to draw various reactions and structures during the oral exam. Use these tools to practice drawing key structures and reaction<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>

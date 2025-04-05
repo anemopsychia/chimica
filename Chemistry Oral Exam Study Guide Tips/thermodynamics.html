@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermodynamics - Chemistry Exam Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Chemistry Exam Study Guide</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="study_schedule.html">Study Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#">Inorganic Chemistry</a>
+                        <div class="dropdown-content">
+                            <a href="thermodynamics.html">Thermodynamics</a>
+                            <a href="kinetics.html">Kinetics</a>
+                            <a href="electrochemistry.html">Electrochemistry</a>
+                        </div>
+                    </li>
+                    <li><a href="organic_chemistry.html">Organic Chemistry</a></li>
+                    <li class="dropdown">
+                        <a href="#">Biochemistry</a>
+                        <div class="dropdown-content">
+                            <a href="carbohydrates.html">Carbohydrates</a>
+                            <a href="nad_fad.html">NAD and FAD</a>
+                        </div>
+                    </li>
+                    <li><a href="final_tips.html">Final Tips</a></li>
+                    <li><a href="interactive_tools.html">Interactive Tools</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Inorganic Chemistry: Thermodynamics</h1>
+            <p class="mb-4">Thermodynamics is the branch of chemistry that deals with the relationships between heat, work, and energy. It's one of the most frequently tested topics in your oral exam and requires both conceptual understanding and mathematical proficiency.</p>
+
+            <div class="search-container mb-4">
+                <input type="text" id="search-input" class="search-input" placeholder="Search within thermodynamics...">
+                <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" style="display: none;"></div>
+
+            <section class="introduction">
+                <div class="card mb-4">
+                    <h2 class="card-title">Thermodynamic Systems and Variables</h2>
+                    <div class="card-content">
+                        <h3>Thermodynamic Systems</h3>
+                        <ul>
+                            <li><strong>Open system</strong>: Can exchange both matter and energy with surroundings</li>
+                            <li><strong>Closed system</strong>: Can exchange energy but not matter with surroundings</li>
+                            <li><strong>Isolated system</strong>: Cannot exchange either matter or energy with surroundings</li>
+                        </ul>
+
+                        <h3 class="mt-3">State Variables</h3>
+                        <ul>
+                            <li><strong>Extensive properties</strong>: Depend on the amount of substance (mass, volume, energy)</li>
+                            <li><strong>Intensive properties</strong>: Independent of the amount of substance (temperature, pressure, density)</li>
+                            <li><strong>State functions</strong>: Properties that depend only on the current state, not on the path taken to reach that state (internal energy, enthalpy, entropy, Gibbs free energy)</li>
+                        </ul>
+
+                        <div class="example mt-3">
+                            <p><strong>Example:</strong> When you heat 100 mL of water from 25°C to 50°C, the change in temperature (ΔT = 25°C) is the same regardless of whether you heat it quickly or slowly. Temperature is a state function. However, the heat required depends on the path (e.g., heating at constant pressure vs. constant volume).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">First Law of Thermodynamics</h2>
+                    <div class="card-content">
+                        <h3>Energy Conservation</h3>
+                        <p>The first law of thermodynamics is essentially the law of conservation of energy applied to thermodynamic systems.</p>
+                        
+                        <div class="equation">
+                            ΔU = q + w
+                        </div>
+                        
+                        <ul>
+                            <li><strong>ΔU</strong>: Change in internal energy of the system</li>
+                            <li><strong>q</strong>: Heat transferred to the system (positive when absorbed)</li>
+                            <li><strong>w</strong>: Work done on the system (positive when done on the system)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Isothermal Expansion of an Ideal Gas</h3>
+                        <div class="equation">
+                            w = -nRT ln(V₂/V₁) = -nRT ln(P₁/P₂)
+                        </div>
+                        
+                        <ul>
+                            <li><strong>For expansion</strong>: V₂ > V₁, so w is negative (work done by the system)</li>
+                            <li><strong>For compression</strong>: V₂ < V₁, so w is positive (work done on the system)</li>
+                        </ul>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "CUTE"</h4>
+                            <ul>
+                                <li><strong>C</strong>an't create or destroy energy</li>
+                                <li><strong>U</strong>niversal conservation principle</li>
+                                <li><strong>T</strong>ransfer between forms is possible</li>
+                                <li><strong>E</strong>nergy total remains constant</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Heat of Reaction and Enthalpy</h2>
+                    <div class="card-content">
+                        <h3>Enthalpy (H)</h3>
+                        <div class="equation">
+                            H = U + PV
+                        </div>
+                        <div class="equation">
+                            ΔH = ΔU + Δ(PV)
+                        </div>
+                        <div class="equation">
+                            At constant pressure: ΔH = qₚ
+                        </div>
+                        
+                        <ul>
+                            <li><strong>Exothermic reaction</strong>: ΔH < 0 (heat released)</li>
+                            <li><strong>Endothermic reaction</strong>: ΔH > 0 (heat absorbed)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Hess's Law</h3>
+                        <p>The enthalpy change of a reaction is independent of the pathway between the initial and final states.</p>
+                        
+                        <div class="example mt-2">
+                            <h4>Example calculation:</h4>
+                            <ul>
+                                <li>For the reaction: C + O₂ → CO₂, ΔH = -393.5 kJ/mol</li>
+                                <li>For the reaction: C + ½O₂ → CO, ΔH = -110.5 kJ/mol</li>
+                                <li>For the reaction: CO + ½O₂ → CO₂, ΔH = -283.0 kJ/mol</li>
+                                <li>Verification: -110.5 kJ/mol + (-283.0 kJ/mol) = -393.5 kJ/mol</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Spontaneity and Entropy</h2>
+                    <div class="card-content">
+                        <h3>Entropy (S)</h3>
+                        <p>Entropy is a measure of molecular disorder or randomness in a system.</p>
+                        
+                        <div class="equation">
+                            S = k ln W
+                        </div>
+                        <p>where k is Boltzmann's constant and W is the number of possible microstates.</p>
+                        
+                        <h4 class="mt-3">Entropy changes:</h4>
+                        <ul>
+                            <li>Solid → Liquid → Gas (increasing entropy)</li>
+                            <li>Dissolution (usually increases entropy)</li>
+                            <li>Mixing (increases entropy)</li>
+                            <li>Reactions that increase the number of moles of gas (increase entropy)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Second Law of Thermodynamics</h3>
+                        <p>The total entropy of an isolated system always increases for spontaneous processes.</p>
+                        
+                        <div class="equation">
+                            ΔS_total = ΔS_system + ΔS_surroundings ≥ 0
+                        </div>
+                        <div class="equation">
+                            For the surroundings: ΔS_surroundings = -ΔH_system/T
+                        </div>
+                        <div class="equation">
+                            Combined expression: ΔS_total = ΔS_system - ΔH_system/T
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Free Energy and Equilibrium</h2>
+                    <div class="card-content">
+                        <h3>Gibbs Free Energy (G)</h3>
+                        <div class="equation">
+                            G = H - TS
+                        </div>
+                        <div class="equation">
+                            ΔG = ΔH - TΔS
+                        </div>
+                        
+                        <h4 class="mt-3">Criteria for spontaneity:</h4>
+                        <ul>
+                            <li><strong>ΔG < 0</strong>: Spontaneous process</li>
+                            <li><strong>ΔG = 0</strong>: System at equilibrium</li>
+                            <li><strong>ΔG > 0</strong>: Non-spontaneous process (reverse process is spontaneous)</li>
+                        </ul>
+
+                        <h3 class="mt-3">Relationship Between ΔG and Equilibrium</h3>
+                        <div class="equation">
+                            ΔG° = -RT ln K
+                        </div>
+                        <div class="equation">
+                            ΔG = ΔG° + RT ln Q
+                        </div>
+                        
+                        <p>where K is the equilibrium constant and Q is the reaction quotient.</p>
+                        <p>At equilibrium: ΔG = 0 and Q = K</p>
+
+                        <div class="mnemonic mt-3">
+                            <h4>Mnemonic: "GHOST"</h4>
+                            <ul>
+                                <li><strong>G</strong> = <strong>H</strong> - T<strong>S</strong></li>
+                                <li><strong>G</strong>ibbs free energy determines spontaneity</li>
+                                <li><strong>H</strong>eat content (enthalpy) measures energy transfer</li>
+                                <li><strong>O</strong>rder decreases as entropy increases</li>
+                                <li><strong>S</strong>pontaneous when ΔG is negative</li>
+                                <li><strong>T</strong>emperature affects the balance between ΔH and ΔS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Predicting Spontaneity</h2>
+                    <div class="card-content">
+                        <div class="mnemonic">
+                            <h3>Memory Aid: "The PETS Rule"</h3>
+                            <ul>
+                                <li><strong>P</strong>ositive ΔH, <strong>P</strong>ositive ΔS: Spontaneous at <strong>high T</strong></li>
+                                <li><strong>P</strong>ositive ΔH, <strong>N</strong>egative ΔS: <strong>Never</strong> spontaneous</li>
+                                <li><strong>N</strong>egative ΔH, <strong>P</strong>ositive ΔS: <strong>Always</strong> spontaneous</li>
+                                <li><strong>N</strong>egative ΔH, <strong>N</strong>egative ΔS: Spontaneous at <strong>low T</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="example mt-3">
+                            <h3>Example 1: Spontaneity of Ice Melting</h3>
+                            <p>Consider ice melting at room temperature (25°C):</p>
+                            <ul>
+                                <li>ΔH = +6.01 kJ/mol (endothermic)</li>
+                                <li>ΔS = +22.1 J/(mol·K) (disorder increases)</li>
+                                <li>ΔG = ΔH - TΔS = +6.01 kJ/mol - (298.15 K × 0.0221 kJ/(mol·K)) = -0.58 kJ/mol</li>
+                                <li>Since ΔG < 0, the process is spontaneous at room temperature</li>
+                                <li>At temperatures below 0°C, ΔG becomes positive, and the process is non-spontaneous</li>
+                            </ul>
+                        </div>
+
+                        <div class="example mt-3">
+                            <h3>Example 2: Combustion of Methane</h3>
+                            <p>For the reaction: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)</p>
+                            <ul>
+                                <li>ΔH° = -890.3 kJ/mol (highly exothermic)</li>
+                                <li>ΔS° = -242.1 J/(mol·K) (decrease in disorder due to gas → liquid)</li>
+                                <li>At 25°C: ΔG° = -890.3 kJ/mol - (298.15 K × -0.2421 kJ/(mol·K)) = -818.1 kJ/mol</li>
+                                <li>The large negative ΔG° explains why methane combustion is highly favorable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card mb-4">
+                    <h2 class="card-title">Understanding Tips</h2>
+                    <div class="card-content">
+                        <div class="highlight">
+                            <h3>Tip 1: Visualizing Entropy Changes</h3>
+                            <p>Think of entropy as a measure of molecular "freedom" or "options":</p>
+                            <ul>
+                                <li>Solids → Liquids → Gases (increasing entropy)</li>
+                           <response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with `grep -n` in order to find the line numbers of what you are looking for.</NOTE>
