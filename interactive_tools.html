@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tools - Chemistry Exam Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+    <script src="https://3Dmol.org/build/3Dmol.ui-min.js"></script>
+    <style>
+        /* Add this to your styles.css or keep it here */
+        .flashcard {
+            perspective: 1000px;
+            min-height: 150px; /* Ensure space for content */
+            cursor: pointer;
+            margin-bottom: 1rem; /* Add spacing */
+            display: none; /* Hide all by default, JS will show the active one */
+        }
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 150px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: var(--border-radius); /* Use your theme variable */
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 150px; /* Match container */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex; /* Center content */
+            justify-content: center; /* Center content */
+            align-items: center; /* Center content */
+            padding: 20px; /* Add padding */
+            box-sizing: border-box; /* Include padding in dimensions */
+            border-radius: var(--border-radius); /* Match container */
+            background-color: var(--card-bg); /* Use theme variable */
+            color: var(--text-color); /* Use theme variable */
+        }
+        .flashcard-front {
+            /* Front specific styles */
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+            /* Back specific styles */
+        }
+        /* Quiz option styling */
+        .quiz-options li {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .quiz-options li:hover {
+            background-color: var(--accent-color-light);
+        }
+        .quiz-options li.selected {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        .quiz-options li.correct {
+            background-color: #28a745; /* Green */
+            color: white;
+            border-color: #28a745;
+        }
+        .quiz-options li.incorrect {
+            background-color: #dc3545; /* Red */
+            color: white;
+            border-color: #dc3545;
+        }
+        .quiz-options li.disabled {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+         /* Mobile Nav Active State */
+         header nav.active {
+            display: block;
+            position: absolute;
+            top: 70px; /* Adjust as needed */
+            left: 0;
+            width: 100%;
+            background-color: var(--header-bg);
+            z-index: 1000;
+        }
+        header nav.active ul {
+            flex-direction: column;
+            align-items: center;
+        }
+        header nav.active ul li {
+            margin: 10px 0;
+        }
+        @media (min-width: 769px) {
+             header nav.active { /* Ensure it doesn't break desktop */
+                 display: block;
+                 position: static;
+                 width: auto;
+                 background-color: transparent;
+             }
+             header nav.active ul {
+                 flex-direction: row;
+             }
+             header nav.active ul li {
+                 margin: 0 15px;
+             }
+             .mobile-nav-toggle { display: none; } /* Hide hamburger on desktop */
+        }
+    </style>
+</head>
+<body class=""> <!-- Add class for dark mode toggle -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Chemistry Exam Study Guide</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="study_schedule.html">Study Schedule</a></li>
+                    <li class="dropdown">
+                        <a href="#">Inorganic Chemistry</a>
+                        <div class="dropdown-content">
+                            <a href="thermodynamics.html">Thermodynamics</a>
+                            <a href="kinetics.html">Kinetics</a>
+                            <a href="electrochemistry.html">Electrochemistry</a>
+                        </div>
+                    </li>
+                    <li><a href="organic_chemistry.html">Organic Chemistry</a></li>
+                    <li class="dropdown">
+                        <a href="#">Biochemistry</a>
+                        <div class="dropdown-content">
+                            <a href="carbohydrates.html">Carbohydrates</a>
+                            <a href="nad_fad.html">NAD and FAD</a>
+                        </div>
+                    </li>
+                    <li><a href="final_tips.html">Final Tips</a></li>
+                    <li><a href="interactive_tools.html">Interactive Tools</a></li>
+                    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i> <!-- Icon will be updated by JS -->
+                    </button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1>Interactive Study Tools</h1>
+            <p class="mb-4">These interactive tools are designed to enhance your learning experience and help you prepare more effectively for your chemistry oral exam. Use them alongside the content pages to reinforce your understanding and test your knowledge.</p>
+
+            <!-- Search - Basic page search -->
+            <div class="search-container mb-4">
+                <input type="text" id="search-input" class="search-input" placeholder="Search tools on this page...">
+                <button id="search-button" class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="search-results" class="mb-4" style="display: none;"></div> <!-- Results container -->
+
+            <!-- Progress Tracker -->
+            <section id="progress-tracker">
+                <div class="card mb-4">
+                    <h2 class="card-title">Your Study Progress</h2>
+                    <div class="card-content">
+                        <p>Track your progress through the study guide. Assumes you visit content pages and complete quizzes. Progress is saved in your browser.</p>
+
+                        <h3 class="mt-3">Overall Progress (<span id="topic-count">0</span>/<span id="total-topics">6</span> Topics Visited)</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="overall-progress" style="width: 0%">0%</div>
+                        </div>
+
+                        <h3 class="mt-3">Topics Visited</h3>
+                        <ul id="visited-topics">
+                            <li>Loading your progress...</li>
+                        </ul>
+
+                        <h3 class="mt-3">Quizzes Completed</h3>
+                        <div id="quiz-progress">
+                            <p>No quizzes completed yet.</p>
+                        </div>
+
+                        <div class="mt-3">
+                            <button id="reset-progress" class="btn btn-accent">Reset Progress</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Flashcards -->
+            <section id="flashcards">
+                <div class="card mb-4">
+                    <h2 class="card-title">Flashcards</h2>
+                    <div class="card-content">
+                        <p>Click on a flashcard to flip it and reveal the answer. Use these to test your recall of key concepts.</p>
+
+                        <div class="mt-3 mb-3">
+                            <label for="flashcard-topic">Select Topic:</label>
+                            <select id="flashcard-topic" class="search-input" style="width: 100%; max-width: 300px;">
+                                <!-- Options will be populated by JS -->
+                            </select>
+                        </div>
+
+                        <div id="flashcard-viewer">
+                            <!-- Flashcards will be loaded here by JS -->
+                            <p id="no-flashcards-msg" style="display: none;">Select a topic to view flashcards.</p>
+                        </div>
+
+                        <div class="text-center mt-3">
+                            <button id="prev-flashcard" class="btn">Previous</button>
+                            <span id="flashcard-counter" class="mx-2">Card 1 of X</span>
+                            <button id="next-flashcard" class="btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Molecular Viewers -->
+            <section id="molecular-viewers">
+                <div class="card mb-4">
+                    <h2 class="card-title">3D Molecular Viewers</h2>
+                    <div class="card-content">
+                        <p>Interact with these 3D models to better understand molecular structures. Click and drag to rotate, scroll to zoom, and right-click (or two-finger drag) to pan.</p>
+
+                        <div class="mt-3 mb-3">
+                             <label for="molecule-selector">Select Molecule:</label>
+                            <select id="molecule-selector" class="search-input" style="width: 100%; max-width: 300px;">
+                                <!-- Options will be populated by JS -->
+                            </select>
+                        </div>
+
+                        <!-- Container for the 3D viewer -->
+                        <div id="mol-viewer" class="molecule-viewer" style="height: 400px; width: 100%; position: relative; background-color: #f0f0f0; border-radius: var(--border-radius); margin-top: 1rem;">
+                            <p style="text-align: center; padding-top: 20px;">Loading viewer...</p>
+                        </div>
+
+                        <div class="mt-3">
+                            <p><strong>Viewing Tips:</strong></p>
+                            <ul>
+                                <li>Click and drag to rotate the molecule</li>
+                                <li>Scroll wheel (or pinch) to zoom in and out</li>
+                                <li>Right-click and drag (or two-finger drag) to pan</li>
+                                <li>Double-click an atom to center the view on it</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quizzes -->
+            <section id="quizzes">
+                <div class="card mb-4">
+                    <h2 class="card-title">Self-Assessment Quizzes</h2>
+                    <div class="card-content">
+                        <p>Test your knowledge with these quizzes. Your scores will be saved in your browser and reflected in the progress tracker.</p>
+
+                        <div id="quiz-selection">
+                            <div class="mt-3 mb-3">
+                                <label for="quiz-topic">Select Quiz Topic:</label>
+                                <select id="quiz-topic" class="search-input" style="width: 100%; max-width: 300px;">
+                                    <!-- Options will be populated by JS -->
+                                </select>
+                                <button id="start-quiz" class="btn btn-primary mt-2">Start Quiz</button>
+                            </div>
+                        </div>
+
+                        <div id="quiz-container" style="display: none;">
+                            <h3 id="quiz-title">Quiz</h3>
+
+                            <div class="quiz-progress-container mt-3 mb-3">
+                                <div class="progress-container">
+                                    <div class="progress-bar" id="quiz-progress-bar" style="width: 0%"></div>
+                                </div>
+                                <p id="quiz-progress-text" class="text-center mt-1">Question 1 of X</p>
+                            </div>
+
+                            <div class="quiz-question-area mt-3">
+                                <div class="quiz-question mb-3" id="current-question">Loading question...</div>
+                                <ul class="quiz-options" id="current-options">
+                                    <!-- Options loaded by JS -->
+                                </ul>
+                                <div class="quiz-feedback mt-2" id="quiz-feedback-message" style="display: none;"></div>
+                                <button id="submit-answer" class="btn quiz-submit mt-2">Submit Answer</button>
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <button id="next-question" class="btn" style="display: none;">Next Question</button>
+                            </div>
+
+                            <div id="quiz-results" style="display: none;">
+                                <h3>Quiz Results</h3>
+                                <p id="quiz-score">You scored: 0/0</p>
+                                <div id="quiz-result-feedback" class="mt-2"></div>
+                                <button id="restart-quiz" class="btn btn-primary mt-3">Take Another Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drawing Tools -->
+            <section id="drawing-tools">
+                <div class="card mb-4">
+                    <h2 class="card-title">Practice Drawing Tools</h2>
+                    <div class="card-content">
+                        <p>Drawing structures and reactions is crucial for the oral exam. While this site doesn't include a built-in chemical drawing tool (they are complex!), we recommend:</p>
+                        <ul>
+                            <li>Using pen and paper frequently to practice drawing mechanisms and structures from memory.</li>
+                            <li>Using free online tools like <a href="https://pubchem.ncbi.nlm.nih.gov/sketcher/index.html" target="_blank" rel="noopener noreferrer">PubChem Sketcher</a> or desktop software (if available) to check your structures.</li>
+                            <li>Focusing on clarity, correct bond angles (where appropriate), and including all necessary charges, lone pairs, and arrows for mechanisms.</li>
+                        </ul>
+                         <p>Practice drawing the key structures and reaction intermediates discussed in the study materials.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Chemistry Exam Study Guide. All rights reserved.</p>
+             <p>Note: Progress tracking and theme preference use your browser's local storage.</p>
+        </div>
+    </footer>
+
+    <!-- Link the JavaScript file -->
+    <script src="js/interactive_tools.js"></script>
+
+</body>
+</html>
